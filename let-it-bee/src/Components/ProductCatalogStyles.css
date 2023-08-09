@@ -1,0 +1,47 @@
+#container {
+    margin: 0px 50px 0 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.product-catalog-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#product-img {
+    width: 80%;
+}
+
+#product-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 50px;
+}
+
+#product-name {
+    text-align: left;
+}
+
+#product-cost {
+    text-align: right;
+}
+
+#filter-div {
+    border-bottom: 1px solid black;
+    margin: 0 50px 50px 50px;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#category-div select{
+    float: left;
+    border: none;
+    margin-bottom: 10px;
+}
+
+#sort-div select{
+    float: right;
+    border: none;
+}  
