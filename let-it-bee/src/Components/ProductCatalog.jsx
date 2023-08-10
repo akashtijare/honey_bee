@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ProductCatalogStyles from './ProductCatalogStyles.css' ;
-// import styles from './styles.css';
 
 const ProductCatalog = () => {
 
   const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     fetchData();
@@ -12,11 +12,19 @@ const ProductCatalog = () => {
 
 
   let fetchData = async () => {
-    let data = await fetch('http://localhost:3000/products2');
+    let data = await fetch('http://localhost:3000/products2?_page=1&_limit=9');
     data = await data.json();
     setProducts(data);
     console.log(data);
   }
+
+  // let LoadPage = (page) => {
+  //   // fetchData(page);
+  //   useEffect(() => {
+  //     fetchData(page);
+  //   }, []);
+  // }
+
   return (
 	<div id="container">
     <div id="filter-div">
@@ -57,10 +65,10 @@ const ProductCatalog = () => {
     </div>
 
     <div id="pagination-div">
-      <button className='hexagon-button'>1</button>
-      <button className='hexagon-button'>2</button>
-      <button className='hexagon-button'>3</button>
-      <button className='hexagon-button'>4</button>
+      {/* <button className='hexagon-button' onClick={setPage(1)}>1</button>
+      <button className='hexagon-button' onClick={setPage(2)}>2</button>
+      <button className='hexagon-button' onClick={setPage(3)}>3</button>
+      <button className='hexagon-button' onClick={setPage(4)}>4</button> */}
     </div>
   </div>
   )
