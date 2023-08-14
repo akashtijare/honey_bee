@@ -1,9 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import {ProductDetails} from './ProductDetails';
+import { redirect, useNavigate } from "react-router-dom";
+import ProductCatalogStyles from './ProductCatalogStyles.css';
+import { Allroutes } from '../Routes/Allroutes';
 
 export const Products = () => {
   
-
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -52,7 +55,7 @@ export const Products = () => {
     <div className="product-catalog-div">
       {products.map((product) => {
         return (
-          <div id="product-div">
+          <div id="product-div" >
             <div id="img-div">
               <img id="product-img" src={product.image} alt="" />
             </div>
