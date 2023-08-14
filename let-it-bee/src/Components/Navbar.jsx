@@ -10,6 +10,10 @@ import {HamburgerIcon} from "@chakra-ui/icons"
 import React,{useState} from 'react';
 
 const Navbar = () => {
+
+    const navigate=useNavigate()
+    const {cartItems}=useSelector((store)=>store.cart)
+
     const breakpoints = createBreakpoints({
         sm: '320px',
         md: '768px',
@@ -17,10 +21,8 @@ const Navbar = () => {
         xl: '1200px',
         '2xl': '1536px',
     })
-    const navigate = useNavigate()
-    const { cartItems } = useSelector((store) => store)
-
     const [open ,setOpen ] = React.useState(false);
+
     return <>
         <Box display={['none', 'none', 'grid', 'grid']} border={"2px solid black"} style={{ width: "100%" }} >
 

@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react';
+import axios from "axios";
+import { Navigate, useNavigate } from 'react-router-dom';
+
 
 export const SignUp = () => {
+
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const containerStyle = {
     backgroundColor: '#185e49',
@@ -56,16 +65,33 @@ export const SignUp = () => {
     fontWeight: 'bold',
   };
 
+  
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+  }
+  
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  }
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  }
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle signup logic here
+    signUp();
+    navigate("/");
   };
-
-
-
-
-
   
+  const signUp = () => {
+    axios.post("http://localhost:8080/users", {
+      username: username,
+      email: email,
+      password: password,
+    })
+  }
+
   return (
     <div style={containerStyle}>
     <div style={signupContainerStyle}>
@@ -75,19 +101,19 @@ export const SignUp = () => {
           <label htmlFor="username" style={labelStyle}>
             Username
           </label>
-          <input type="text" id="username" name="username" required style={inputStyle} />
+          <input type="text" id="username" name="username" required style={inputStyle} value={username} onChange={handleUsername} />
         </div>
         <div style={inputGroupStyle}>
           <label htmlFor="email" style={labelStyle}>
             Email
           </label>
-          <input type="email" id="email" name="email" required style={inputStyle} />
+          <input type="email" id="email" name="email" required style={inputStyle} value={email} onChange={handleEmail} />
         </div>
         <div style={inputGroupStyle}>
           <label htmlFor="password" style={labelStyle}>
             Password
           </label>
-          <input type="password" id="password" name="password" required style={inputStyle} />
+          <input type="password" id="password" name="password" required style={inputStyle} value={password} onChange={handlePassword}/>
         </div>
         <button type="submit" style={signupButtonStyle}>
           Sign Up
