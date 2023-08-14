@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux";
 import { extendTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools"
-import {HamburgerIcon} from "@chakra-ui/icons"
-import React,{useState} from 'react';
+import { HamburgerIcon } from "@chakra-ui/icons"
+import React, { useState } from 'react';
 
 const Navbar = () => {
 
@@ -29,7 +29,7 @@ const Navbar = () => {
             <Text style={{ textAlign: "center", background: "#185E49", color: "white", width: "100%" }}>Free shipping on orders over 500 rupees</Text>
 
             <Flex style={{ justifyContent: "space-evenly", width: "80%", margin: "0px auto" }}>
-                <Box borderLeft={"2px solid black"} borderRight={"2px solid black"} paddingLeft={"10"} paddingRight={"10"} h={"50px"} cursor={'pointer'} onClick={() => navigate("/")} ><Heading>LET IT <span style={{color:"#185E49"}} >BEE.CO</span></Heading></Box>
+                <Box borderLeft={"2px solid black"} borderRight={"2px solid black"} paddingLeft={"10"} paddingRight={"10"} h={"50px"} cursor={'pointer'} onClick={() => navigate("/")} ><Heading>LET IT <span style={{ color: "#185E49" }} >BEE.CO</span></Heading></Box>
                 <Box ></Box>
 
                 <Flex gap="50px" alignItems={"center"} justifyContent={"center"}>
@@ -51,63 +51,63 @@ const Navbar = () => {
         <Box display={['grid', 'grid', 'none', 'none']}>
             <Text style={{ textAlign: "center", background: "#185E49", color: "white", width: "100%" }}>Free shipping on orders over 500 rupees</Text>
             <Flex alignItems={"center"} justifyContent={"space-between"} padding={'2'} border={"2px solid black"}>
-            <Box onClick={()=>{setOpen(!open)}} ><HamburgerIcon /></Box>
-            <Box  onClick={() => navigate("/")} ><Heading>LET IT <span style={{color:"#185E49"}} >BEE.CO</span></Heading></Box>
-            <Box onClick={() => navigate("/addtocart")}><BsCart2/></Box>
+                <Box onClick={() => { setOpen(!open) }} ><HamburgerIcon /></Box>
+                <Box onClick={() => navigate("/")} ><Heading>LET IT <span style={{ color: "#185E49" }} >BEE.CO</span></Heading></Box>
+                <Box onClick={() => navigate("/addtocart")}><BsCart2 /></Box>
             </Flex>
 
         </Box>
-        {open ?(<Box
-        w={"100vw"}
-        bgColor={"grey.50"}
-        zIndex={"20"}
-        h={"65vh"}
+        {open ? (<Box
+            w={"100vw"}
+            bgColor={"grey.50"}
+            zIndex={"20"}
+            h={"65vh"}
         >
-        <Flex
-        flexDir={"column"}
-        align={"center"}
-        >
-        <Box border={"2px solid black"}
-         w={'100%'}
-          padding={"20px"}
-          onClick={() => {navigate("/product");setOpen(!open)}}
-          _hover={{background:"tomato",h:"11vh",fontSize:"30px",padding:"10px"}}
-           >
-            <Text>PRODUCTS</Text>
-            </Box>
-            <Box border={"2px solid black"}
-             w={'100%'} 
-             onClick={() => {navigate("/");setOpen(!open)}}
-             _hover={{background:"tomato",h:"11vh",fontSize:"30px",padding:"10px"}}
-             padding={"20px"} ><Text>ABOUT US</Text>
-             </Box>
-             <Box border={"2px solid black"}
-             w={'100%'} 
-             onClick={() => {navigate("/");setOpen(!open)}}
-             _hover={{background:"tomato",h:"11vh",fontSize:"30px",padding:"10px"}}
-             padding={"20px"} ><Text>OUR BLOG</Text>
-             </Box>
-             <Box border={"2px solid black"}
-             w={'100%'} 
-             onClick={() => {navigate("/");setOpen(!open)}}
-             _hover={{background:"tomato",h:"11vh",fontSize:"30px",padding:"10px"}}
-             padding={"20px"} ><Text>CONTACTS</Text>
-             </Box>
-             <Box border={"2px solid black"}
-             w={'100%'} 
-             onClick={() => {navigate("/login");setOpen(!open)}}
-             _hover={{background:"tomato",h:"11vh",fontSize:"30px",padding:"10px"}}
-             padding={"20px"} ><Text>MY ACCOUNT</Text>
-             </Box>
-             <Box border={"2px solid black"}
-             w={'100%'} 
-             onClick={() => {navigate("/product");setOpen(!open)}}
-             _hover={{background:"tomato",h:"11vh",fontSize:"30px",padding:"10px"}}
-             padding={"20px"} ><Text>SEARCH</Text>
-             </Box>
+            <Flex
+                flexDir={"column"}
+                align={"center"}
+            >
+                <Box border={"2px solid black"}
+                    w={'100%'}
+                    padding={"20px"}
+                    onClick={() => { navigate("/product"); setOpen(!open) }}
+                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                >
+                    <Text>PRODUCTS</Text>
+                </Box>
+                <Box border={"2px solid black"}
+                    w={'100%'}
+                    onClick={() => { navigate("/"); setOpen(!open) }}
+                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    padding={"20px"} ><Text>ABOUT US</Text>
+                </Box>
+                <Box border={"2px solid black"}
+                    w={'100%'}
+                    onClick={() => { navigate("/"); setOpen(!open) }}
+                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    padding={"20px"} ><Text>OUR BLOG</Text>
+                </Box>
+                <Box border={"2px solid black"}
+                    w={'100%'}
+                    onClick={() => { navigate("/"); setOpen(!open) }}
+                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    padding={"20px"} ><Text>CONTACTS</Text>
+                </Box>
+                <Box border={"2px solid black"}
+                    w={'100%'}
+                    onClick={() => { navigate("/login"); setOpen(!open) }}
+                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    padding={"20px"} ><Text>MY ACCOUNT</Text>
+                </Box>
+                <Box border={"2px solid black"}
+                    w={'100%'}
+                    onClick={() => { navigate("/product"); setOpen(!open) }}
+                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    padding={"20px"} ><Text>SEARCH</Text>
+                </Box>
 
-        </Flex>
-        </Box>):(<></>)}
+            </Flex>
+        </Box>) : (<></>)}
     </>
 }
 export default Navbar;
