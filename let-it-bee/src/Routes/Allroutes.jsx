@@ -18,7 +18,7 @@ export const Allroutes = () => {
         <Route path='/product' element={<Products />}/>
         <Route path='/products:id' element={<ProductDetails />}/>
         <Route path='/address' element={<Address />}/>
-
+        
     </Routes>
   )
 }
