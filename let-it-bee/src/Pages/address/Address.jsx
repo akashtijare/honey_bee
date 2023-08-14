@@ -1,10 +1,11 @@
+
+import { useState } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import AddressInfo from "./AddressInfo";
 import CheckOut from "./CheckOut";
 import Payment from "./Payment";
 import PersonalInfo from "./PersonalInfo";
 
-import { useState } from "react";
 import Confirmation from "./Confimation";
 
 const Address = () => {

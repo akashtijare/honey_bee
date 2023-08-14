@@ -1,4 +1,4 @@
-import { Input,Stack,Button,Box, Heading,ButtonGroup,HStack, Flex} from "@chakra-ui/react";
+import { Input,Stack,Button,Box, Heading,ButtonGroup , Flex} from "@chakra-ui/react";
 import { BsArrowLeft } from "react-icons/bs";
 
 
