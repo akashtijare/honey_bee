@@ -1,16 +1,35 @@
-import { Input,Stack,Button,Box, Heading,ButtonGroup , Flex} from "@chakra-ui/react";
+import { Input,Stack,Button,Box, Heading,ButtonGroup , Flex, useToast} from "@chakra-ui/react";
 import { BsArrowLeft } from "react-icons/bs";
 
 
 const PersonalInfo = ({onNext,onPrevious,formData,setFormData,handleSubmit}) =>{
 
-    
+    const toast=useToast();
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
       };
       const handleNext = () =>{
-        onNext();
-        handleSubmit(formData)
+        if (formData.name.length === 0 ||
+            formData.lastname.length === 0 ||
+            formData.email.length ===0 ||
+            formData.phone.length === 0 
+            // formData.alternate.length === 0 
+            )
+            {
+              toast({
+                title: 'PLEASE ENTER ALL THE FIELDS.',
+                status: 'error',
+                duration: 3000,
+                isClosable: true,
+              })
+
+            }
+            else{
+                onNext();
+                handleSubmit(formData)
+            }
+       
+       
         console.log("hii")
     }
 
@@ -37,7 +56,7 @@ const PersonalInfo = ({onNext,onPrevious,formData,setFormData,handleSubmit}) =>{
                             <Input variant='flushed' placeholder="LAST NAME" size='md'marginTop="8px" name="lastname" onChange={handleChange} value={formData.lastname || ""} />
                             <Input variant='flushed' placeholder="E-MAIL" size='md'  marginTop="8px" name="email" onChange={handleChange} value={formData.email || ""}/>
                             <Input variant='flushed' placeholder="PHONE NO" size='md'marginTop="8px" name="phone" onChange={handleChange} value={formData.phone || ""} />   
-                            <Input variant='flushed' placeholder="ALTERNATE PHONE NO" size='md'marginTop="8px" /> 
+                            <Input variant='flushed' placeholder="ALTERNATE PHONE NO" size='md'marginTop="8px" name="alternate"  onChange={handleChange} value={formData.alternate || ""}/> 
                         </Stack>
                     </Box>
                     <Box  spacing={10} marginBottom="50px">

@@ -1,4 +1,4 @@
-import { Input,Stack,Button,Box, Heading,ButtonGroup,Flex} from "@chakra-ui/react";
+import { Input,Stack,Button,Box, Heading,ButtonGroup,Flex, useToast} from "@chakra-ui/react";
 import { BsArrowLeft } from "react-icons/bs";
 
 
@@ -6,8 +6,30 @@ import { BsArrowLeft } from "react-icons/bs";
 
 const AddressInfo = ({onNext , formData ,setFormData}) =>{
 
+    const toast=useToast();
+
     const handleNext = () =>{
-        onNext();
+        if (formData.address.length === 0 ||
+            formData.city.length === 0 ||
+            formData.postal.length ===0 ||
+            formData.district.length === 0 ||
+            formData.state.length === 0 
+            )
+            {
+              toast({
+                title: 'PLEASE ENTER ALL THE FIELDS.',
+                status: 'error',
+                position:'top',
+                duration: 3000,
+                isClosable: true,
+              })
+
+            }
+            else{
+                onNext();
+
+            }
+       
         console.log("hii")
     }
     const handleChange = (e) => {

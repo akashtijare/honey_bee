@@ -26,44 +26,39 @@ const Confirmation = ({formData,onNext,onPrevious}) =>{
                     <Box>
                         <Stack spacing={4} >
                             <Flex >
-                                <Text>NAME :</Text>  
+                                <Text color="grey">NAME :</Text>  
                                {/* <Flex> */}
                                 <Box marginLeft="180px">
-                                     <Text>{`${formData.name}  ${formData.lastname}`}</Text> 
+                                     <Text color="teal">{`${formData.name}  ${formData.lastname}`}</Text> 
                                 </Box> 
-                                {/* </Flex>  */}
                             </Flex>
                             <hr />
                             <Flex>
-                                <Text>EMAIL :</Text>   
-                                {/* <Spacer/> */}
+                                <Text color="grey">EMAIL :</Text>  
                                 <Box marginLeft="180px">
-                                    <Text>{`${formData.email}`}</Text>
+                                    <Text color="teal">{`${formData.email}`}</Text>
                                 </Box>
                             </Flex>
                             <hr />
                             <Flex gap="40px">
-                                <Text>PHONE NO :</Text>  
-                                {/* <Spacer/> */}
+                                <Text color="grey">PHONE NO :</Text>  
                                 <Box marginLeft="105px">
-                                    <Text>{`${formData.phone}`}</Text>
+                                    <Text color="teal">{`${formData.phone}`}</Text>
                                 </Box>
                             </Flex>
                            
                             <hr />
                             <Flex gap="40px">
-                                <Text>ADDRESS :</Text>  
-                                {/* <Spacer/> */}
+                                <Text color="grey">ADDRESS :</Text>  
                                 <Box marginLeft="120px">
-                                     <Text>{`${formData.address} ${formData.city} ${formData.posatl}`}</Text>
+                                     <Text color="teal">{`${formData.address} ${formData.city} ${formData.postal}`}</Text>
                                 </Box>
                             </Flex>
                             <hr />
                             <Flex gap="40px">
-                                <Text>STATE :</Text>  
-                                {/* <Spacer/> */}
+                                <Text color="grey">STATE :</Text>  
                                 <Box marginLeft="145px">
-                                    <Text>{`${formData.state}`}</Text>
+                                    <Text color="teal">{`${formData.state}`}</Text>
                                 </Box>
                             </Flex>
                             <hr />
