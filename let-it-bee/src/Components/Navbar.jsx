@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
     const navigate=useNavigate()
-    const {cartItems}=useSelector((store)=>store)
+    const {cartItems}=useSelector((store)=>store.cart)
     return <>
         <Box   border={"2px solid black"} style={{ width: "100%" }} >
 

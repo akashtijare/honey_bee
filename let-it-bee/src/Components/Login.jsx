@@ -1,7 +1,16 @@
-import React from 'react'
-import {Link} from "react-router-dom"
+import axios from 'axios';
+import React, { useState } from 'react'
+import { Link } from "react-router-dom"
+import { Navigate, useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { handleLogin } from '../Redux/action';
 
 export const Login = () => {
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const containerStyle = {
     backgroundColor: '#f9ae05',
@@ -37,10 +46,29 @@ export const Login = () => {
     margin: "5px",
   };
 
+
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+  }
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  }
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
+    axios.get(`http://localhost:8080/users?username=${username}&password=${password}`)
+      .then((response) => {
+        if (response.data.length === 1) {
+          dispatch(handleLogin());
+          navigate("/")
+        } else {
+          console.log("wrong username or password");
+        }
+      })
   };
+
 
 
   return (
@@ -62,13 +90,13 @@ export const Login = () => {
             <label htmlFor="username" style={{ color: '#185e49', fontWeight: 'bold' }}>
               Username
             </label>
-            <input type="text" id="username" name="username" required style={inputStyle} />
+            <input type="text" id="username" name="username" required style={inputStyle} value={username} onChange={handleUsername} />
           </div>
           <div style={{ marginBottom: '15px' }}>
             <label htmlFor="password" style={{ color: '#185e49', fontWeight: 'bold' }}>
               Password
             </label>
-            <input type="password" id="password" name="password" required style={inputStyle} />
+            <input type="password" id="password" name="password" required style={inputStyle} value={password} onChange={handlePassword} />
           </div>
           <button type="submit" style={buttonStyle}>
             Login
