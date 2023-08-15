@@ -72,7 +72,6 @@ const Address = () => {
                     )}
                     {step === 4 && (
                         <Payment
-                            onNext={handleNext}
                             onPrevious={handlePrevious}
                         />
                     )}
@@ -87,7 +86,7 @@ const Address = () => {
                         '0%', // 30em-48em
                         '0%', // 48em-62em
                         '40%', // 62em+
-                      ]}
+                    ]}
                 >
                     <CheckOut />
                 </Box>
