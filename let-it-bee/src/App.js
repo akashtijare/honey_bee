@@ -2,6 +2,8 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import { ProductDetails } from './Pages/ProductDetails';
 import Address from './Pages/address/Address';
+import ThankYou from './Pages/address/ThankYou';
+import  {AddToCart}  from './Pages/addtocart/AddToCart';
 import { Allroutes } from './Routes/Allroutes';
 
 function App() {
@@ -9,7 +11,9 @@ function App() {
     <div className="App">
     <Navbar/>
     <Allroutes/> 
-    {/* <Address/> */}
+   {/* <Address/> */}
+   {/* <AddToCart/> */}
+
     </div>
   );
 }
