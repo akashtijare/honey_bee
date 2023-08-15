@@ -1,75 +1,132 @@
-#product-details-div{
+#container {
+	font-family: "fjalla One", sans-serif;
+    font-size: 20px;
+  }
+
+#product-main-div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border: 1px solid gold;
 }
 
-
-#image-div {
-    /* width: 80%; */
+#prod-name {
+    font-size: 43px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: left;
 }
 
-#product-info {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    
+#about-prod {
+    font-size: 35px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 40px;
 }
 
-#product-name-div {
-    border: 1px solid red;
-    height: 80px;
+#product-details-div {
+    margin: 0 80px 0 80px;
 }
 
-#products-name {
-    font-size: 50px;
-    font-weight: 700;
-    /* background-color: aquamarine; */
-}
-
-#product-name-div h1{
-    border: 1px solid blue;
-}
-
-#product-weight-price-div {
+#price-div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: fit-content;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+#product-description {
+    margin-bottom: 40px;
 }
 
 #product-weight {
-    float: left;
     text-align: left;
 }
 
-#product-cost {
-    float: right;
+#product-price {
+    text-align: right;
 }
 
-#description {
-    text-align: left;
+#product-description {
+    text-align: justify;
 }
 
 #add-to-cart-div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 120px;
 }
 
-#button-div {
+#add-sub-buttons {
     border: 1px solid black;
-    border-radius: 30px;
-    width: fit-content;
-    height: fit-content;
-    padding: 15px;
+    border-radius: 40px;
+    width:150px;
 }
 
-#add-to-cart {
+#add-sub-buttons {
+    text-align: center;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px;
+}
+
+#add-to-cart-button {
     border: 1px solid black;
-    border-radius: 30px;
-    width:375px;
-    height: fit-content;
-    padding: 15px;
-    background-color: #195E49;
+    border-radius: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 400px;
+    font-size: 23px;
+    background-color: #185E48;
     color: white;
+}
+
+#accordion-item {
+    padding: 10px 0 10px 0;
+    border-top: 1px solid black;
+}
+
+#accordion-title {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.last-acc {
+    border-bottom: 1px solid black;
+}
+#accordion-title p {
+    text-align: left;
+}
+
+#accordion-title span {
+    text-align: right;
+}
+
+#acc-title {
+    align-items: stretch;
+}
+
+#similar-products-div {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#similar-div1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#sim-div-head {
+    font-size: 35px;
+}
+
+#accordion-content {
+    text-align: left;
+}
+
+#reviewer-name {
+    font-size: 25px;
 }
