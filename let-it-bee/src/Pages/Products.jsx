@@ -89,7 +89,7 @@ export const Products = () => {
               <div id="product-name"><h3>{product.name}</h3></div>
               <div id="product-cost"><h3>{product.cost}</h3></div>
             </div>
-              <Link to={`/products:${product.id}`} product={product}>More Details</Link>
+              <Link to={`/product/${product.id}`} product={product}>More Details</Link>
           </div>
         )
       })}
