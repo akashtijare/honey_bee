@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Mulish;
+  }
+  
+
 #container {
 	font-family: "fjalla One", sans-serif;
     font-size: 20px;
@@ -19,7 +30,7 @@
     font-size: 35px;
     font-weight: 600;
     text-align: left;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 #product-details-div {
@@ -93,6 +104,20 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
+#accordion-title p {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+#accordion-item li {
+    margin: 5px 0 5px 0;
+}
+
+#reviewer-name {
+    margin: 25px 0 25px 0;
+    font-weight: 800;
+}
+
 .last-acc {
     border-bottom: 1px solid black;
 }
@@ -121,6 +146,9 @@
 
 #sim-div-head {
     font-size: 35px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 #accordion-content {
@@ -129,4 +157,22 @@
 
 #reviewer-name {
     font-size: 25px;
+}
+
+#similar-div1 {
+    justify-content: space-around;
+}
+#sim-div-head {
+    width: 50%;
+    margin-left: 125px;
+}
+
+#sim-div-body {
+    font-family: 'Caveat', cursive;
+    font-style: italic;
+    width: 50%;
+    margin-left: 110px;
+    font-weight: 900;
+    font-size: 30px;
+    color: #185E48;
 }
