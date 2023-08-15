@@ -1,5 +1,12 @@
-import { legacy_createStore } from "redux";
+import { combineReducers, legacy_createStore } from "redux";
 
-import reducer from "./reducer"; 
+import cartReducer from "./cartReducer"; 
+import sessionReducer from "./sessionReducer";
 
-export const store = legacy_createStore(reducer);
+const rootReducers = combineReducers({
+	isLogged: sessionReducer,
+	cart: cartReducer,
+	
+})
+
+export const store = legacy_createStore(rootReducers);

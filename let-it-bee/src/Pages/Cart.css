@@ -31,13 +31,13 @@ i {
   cursor: pointer;
 }
 
-body {
+/* body {
   width: 80%;
   height: 100vh;
   margin: auto;
-}
+} */
 
-header {
+/* header {
   width: 100%;
   line-height: 10rem;
   display: grid;
@@ -64,7 +64,7 @@ header {
   color: var(--main-color);
   margin-left: 1.5rem;
   font-weight: 400;
-}
+} */
 
 .cart-icon {
   display: flex;
@@ -124,7 +124,7 @@ header {
 /* cart main div start  */
 
 .main-cart-section .cart-items {
-  width: 100%;
+  width: 70%;
   height: 62rem;
   background: linear-gradient(
     103.49deg,
