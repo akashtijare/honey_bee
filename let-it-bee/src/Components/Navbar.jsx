@@ -8,6 +8,8 @@ import { extendTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import { HamburgerIcon } from "@chakra-ui/icons"
 import React, { useState } from 'react';
+import { ScrollToAboutUs } from "../Pages/Home"
+import { ScrollToBlog } from "../Pages/Home"
 
 const Navbar = () => {
 
@@ -77,13 +79,13 @@ const Navbar = () => {
                 </Box>
                 <Box border={"2px solid black"}
                     w={'100%'}
-                    onClick={() => { navigate("/"); setOpen(!open) }}
+                    onClick={() => { navigate('/'); setOpen(!open) }}
                     _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
                     padding={"20px"} ><Text>ABOUT US</Text>
                 </Box>
                 <Box border={"2px solid black"}
                     w={'100%'}
-                    onClick={() => { navigate("/"); setOpen(!open) }}
+                    onClick={() => { navigate('/'); setOpen(!open) }}
                     _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
                     padding={"20px"} ><Text>OUR BLOG</Text>
                 </Box>

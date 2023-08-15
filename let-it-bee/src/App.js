@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 import { ProductDetails } from './Pages/ProductDetails';
 import Address from './Pages/address/Address';
@@ -9,7 +10,7 @@ function App() {
     <div className="App">
     <Navbar/>
     <Allroutes/> 
-    {/* <Address/> */}
+    <Footer/>
     </div>
   );
 }
