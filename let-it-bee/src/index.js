@@ -8,8 +8,17 @@ import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
+import { extendTheme } from '@chakra-ui/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const breakpoints = {
+  sm: '320px',
+  md: '768px',
+  lg: '960px',
+  xl: '1200px',
+  '2xl': '1536px',
+}
+const theme = extendTheme({breakpoints})
 root.render(
   <BrowserRouter>
 <ChakraProvider>
