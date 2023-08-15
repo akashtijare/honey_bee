@@ -15,6 +15,7 @@ function App() {
     <Allroutes/>
    {/* <Address/> */}
    {/* <AddToCart/> */}
+   <Footer/>
     </div>
   );
 }
