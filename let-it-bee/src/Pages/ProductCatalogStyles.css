@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Mulish;
+  }
+  
 #container {
     margin: 0px 50px 0 50px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -54,8 +63,7 @@
 }
 
 #pagination-div button {
-    border: 1px solid black;
-    /* margin: 15px; */
+    border: 1px solid #194F3D;
     height: 45px;
     width: 45px;
     margin: 0 15px 0 15px;

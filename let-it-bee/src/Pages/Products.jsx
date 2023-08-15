@@ -9,8 +9,8 @@ export const Products = () => {
   
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
-  const [sortBy, setSortBy] = useState("");
-  const [sortOrder, setOrderBy] = useState("desc");
+  const [sortBy, setSortBy] = useState("name");
+  const [sortOrder, setOrderBy] = useState("asc");
   const [isLoading, setIsLoading] = useState(true);
   const [categoryFilter, setFilterByCategory] = useState("all");
   const [isError, setIsError] = useState(null);
@@ -19,19 +19,28 @@ export const Products = () => {
   let getData = async (categoryFilter, sortBy, sortOrder, page) => {
     let url = `http://localhost:8080/products2?_page=${page}&_limit=9`;
     
-    // if(categoryFilter === "all") {
-    //   url = url;
-    // }
+    if(categoryFilter === "all") {
+      url = url;
+    }
 
     if(categoryFilter !== "all") {
       url = `${url}&category=${categoryFilter}`
     }
     if(sortBy !== "" && sortOrder !== "") {
-      url = `${url}&sort=${sortBy}&order=${sortOrder}`
+      if(sortOrder === "aToZ") {
+          setOrderBy("asc");
+      }
+      else if(sortOrder === "zToA") {
+          setOrderBy("desc");
+      }
+      else if(sortOrder === "desc") {
+          setOrderBy("desc");
+      }
+          url = `${url}&_sort=${sortBy}&_order=${sortOrder}`
     }
-    console.log(url);
+    
     try {
-      // setIsLoading(true);
+      setIsLoading(true);
       let response = await fetch(url);
       let json = await response.json();
       setProducts(json);
@@ -46,23 +55,11 @@ export const Products = () => {
     getData(categoryFilter, sortBy, sortOrder, page);
   }, [categoryFilter, sortBy, sortOrder, page]);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, [page]);
-
-
-  let fetchData = async () => {
-    let data = await fetch(`http://localhost:8080/products2?_page=${page}&_limit=9&_sort=name&_order=asc`);
-    data = await data.json();
-    setProducts(data);
-    console.log(data);
-  }
-
   return (
 	<div id="container">
     <div id="filter-div">
       <div id="category-div">
-      <select name = "selectCategory" id = "selectCategory" onChange={(event) => {setFilterByCategory(event.target.value); console.log(event);} }>
+      <select name = "selectCategory" id = "selectCategory" onChange={(event) => {setFilterByCategory(event.target.value); } }>
           <option value = "all">ALL CATEGORIES</option>
           <option value = "honey">HONEY</option>
           <option value = "pollen">POLLEN</option>
@@ -70,7 +67,7 @@ export const Products = () => {
         </select>
       </div>
       <div id="sort-div">
-        <select name = "sortingFunctionality" id = "sortingFunctionality" onChange={(event) => {setOrderBy(event.target.value)}}>
+        <select name = "sortingFunctionality" id = "sortingFunctionality" onChange={(event) => {setOrderBy(event.target.value); }}>
           <option value = "popularity">SORT BY POPULARITY</option>
           <option value = "asc">SORT BY PRICE - LOW TO HIGH</option>
           <option value = "desc">SORT BY PRICE - HIGH TO LOW</option>

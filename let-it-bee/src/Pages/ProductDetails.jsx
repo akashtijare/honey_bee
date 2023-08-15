@@ -1,6 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import ProductDetailsStyles from './ProductDetailsStyles.css'
+import { useParams } from 'react-router-dom';
+
+
 
 export const ProductDetails = () => {
   
@@ -14,10 +17,11 @@ export const ProductDetails = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
+  const urlParam = useParams();
+  console.log("url param here" + urlParam);
 
   let fetchData = async () => {
-    let data = await fetch('http://localhost:8080/products2/1');
+    let data = await fetch(`http://localhost:8080/products2/1`);
     data = await data.json();
     setProd(data);
     console.log(data);
@@ -95,8 +99,8 @@ export const ProductDetails = () => {
       </div>
       <div id="similar-products-div">
         <div id="similar-div1">
-          <p id="sim-div-head">YOU MIGHT ALSO LIKE</p>
-          <p id="sim-div-body">100% natural and organic</p>
+          <div id="sim-div-head"><p>YOU MIGHT ALSO LIKE</p></div>
+          <div id="sim-div-body"><p>100% natural and organic</p></div>
         </div>
         <div>
         <div id="img-div">
