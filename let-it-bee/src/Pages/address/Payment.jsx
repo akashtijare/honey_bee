@@ -1,12 +1,22 @@
 import {Input, Stack,Button,Box, Heading,ButtonGroup,Flex, ModalOverlay, useDisclosure, Modal, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Text,useToast} from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import {RingLoader} from "react-spinners"
 
 
-
+const initialData = {
+    number:"",
+    exp:"",
+    cvv:"",
+    name:""
+}
 const Payment = ({onPrevious}) =>{
+    const [data,setData] =useState(initialData);
+
+    const handleChange = (e) => {
+        setData({ ...data, [e.target.name]: e.target.value });
+    };
 
     const navigate = useNavigate();
 
@@ -24,22 +34,39 @@ const Payment = ({onPrevious}) =>{
       const [overlay, setOverlay] = React.useState(<OverlayOne />)
 
       const handleConfirm = () =>{
-        setOverlay(<OverlayOne />)
-        onOpen();
-        setTimeout(() => {
-            onClose();
+        if (data.number.length === 0 ||
+            data.exp.length === 0 ||
+            data.cvv.length === 0 ||
+            data.name.length === 0
+        ) {
             toast({
-                title: 'PAYMENT DONE',
-                status: 'success',
-                position:'top',
+                title: 'PLEASE ENTER ALL THE FIELDS.',
+                status: 'error',
+                position: 'top',
                 duration: 3000,
                 isClosable: true,
-              })
+            })
 
-             navigate("./thankyou")
-            // window.open("./thankyou",'_self')
+        }
+        else{
+            setOverlay(<OverlayOne />)
+            onOpen();
+            setTimeout(() => {
+                onClose();
+                toast({
+                    title: 'PAYMENT DONE',
+                    status: 'success',
+                    position:'top',
+                    duration: 3000,
+                    isClosable: true,
+                })
 
-        }, 3000);
+                navigate("./thankyou")
+                // window.open("./thankyou",'_self')
+
+            }, 3000);
+        }
+
       }
     return(
         <Box  >
@@ -61,17 +88,17 @@ const Payment = ({onPrevious}) =>{
                  
                  <Box>
                      <Stack spacing={3} p={4}>
-                         <Input variant='flushed' placeholder="ENTER CARD NUMBER" size='md' marginTop="8px"  />
+                         <Input variant='flushed' placeholder="ENTER CARD NUMBER" size='md' marginTop="8px" name="number" onChange={handleChange} value={data.number} />
                          <Flex gap={4}>
-                         <Input variant='flushed' placeholder="EXPIRY DATE" size='md'  marginTop="8px" />
-                         <Input variant='flushed' placeholder="CVV" size='md'marginTop="8px" />
+                         <Input variant='flushed' placeholder="EXPIRY DATE" size='md'  marginTop="8px"  name="exp" onChange={handleChange} value={data.exp}/>
+                         <Input variant='flushed' placeholder="CVV" size='md'marginTop="8px"  name="cvv" onChange={handleChange} value={data.cvv}/>
                          </Flex>
-                         <Input variant='flushed' placeholder="ACCOUNT HOLDER NAME" size='md'marginTop="8px" />
+                         <Input variant='flushed' placeholder="ACCOUNT HOLDER NAME" size='md'marginTop="8px" name="name" onChange={handleChange} value={data.name} />
                      </Stack>
                  </Box>
                  <Box  spacing={10} marginBottom="50px">
                      <ButtonGroup gap='10'>
-                         <Button colorScheme='teal' pl="7" pr="7"   borderRadius='20px' leftIcon={< BsArrowLeft/>}  variant='outline'onClick={()=>onPrevious()} >BACK</Button>
+                         <Button colorScheme='teal' pl="7" pr="7"   borderRadius='20px' leftIcon={< BsArrowLeft/>}  variant='outline' onClick={()=>onPrevious()}>BACK</Button>
                          <Button colorScheme='teal' pl="20" pr="20"  borderRadius='20px'  _hover={{ bg: '#F05A1F' }} 
                            onClick={handleConfirm}>
                                         CONFIRM

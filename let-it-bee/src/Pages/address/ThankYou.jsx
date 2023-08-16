@@ -1,6 +1,10 @@
-import { Box, Button, ButtonGroup, Flex, Heading, Image, Img, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, ButtonGroup, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import logo from "./ThankYou_Image.png"
+import { useNavigate } from "react-router-dom";
 
 const ThankYou = () => {
+
+    const navigate = useNavigate();
     return (
         <Box className="mainContainer" >
             <Flex>
@@ -23,7 +27,7 @@ const ThankYou = () => {
                                         <Text size="s"> CHECK YOUR MAIL</Text>
                                     </Box>
                                 </Flex>
-                                <Box pos="absolute" left="35%" top="30% " width="40%" ><Heading fontFamily="cursive" color="#185E49"> We have started processing Your Sweet Order !!</Heading></Box>
+                                <Box pos="absolute" left="30%" top="40% " width="40%" ><Heading fontFamily="cursive" color="teal" size="lg"> We have started processing Your Sweet Order !!</Heading></Box>
 
                                 <Box >
                                     <Box w='60%' margin='auto'>
@@ -35,7 +39,7 @@ const ThankYou = () => {
                                             <Flex>
                                             <Box spacing={10} marginLeft="10px">
                                                 <ButtonGroup gap='10'>
-                                                    <Button colorScheme='teal' pl="12" pr="12" borderRadius='20px' variant='outline' >BACK TO HOME</Button>
+                                                <Button colorScheme='teal' pl="20" pr="20" borderRadius='20px' _hover={{ bg: '#F05A1F' }} onClick={()=> navigate("./")}>BACK TO HOME</Button>
 
                                                 </ButtonGroup>
                                             </Box>
@@ -50,13 +54,10 @@ const ThankYou = () => {
 
 
 
-                <Box className="imageContainer"  w="40%">
-                <Image
-                    src='https://th.bing.com/th/id/OIP.iHX1jb5vvLj7pScdLh1lWgAAAA?pid=ImgDet&rs=1'
-                    alt='honey'
-                    width="100%"
-                    height="70%"
-                />
+                <Box className="imageContainer"  w="40%" h="700px"  bgGradient="linear(to-t, #96C1E4, teal.500)">
+                  <div  style={{width:"80%", margin:"80px"}} >
+                    <img style={{width:"100%"}} src={logo} alt="honey"/>
+                  </div>
                 </Box>
             </Flex>
         </Box>
