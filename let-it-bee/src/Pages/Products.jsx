@@ -57,6 +57,15 @@ export const Products = () => {
 
   return (
 	<div id="container">
+
+    <div id="head-info-div">
+      <p id="head-info">PRODUCTS</p>
+    </div>
+
+    <div id="scroll-div">
+    <marquee id="scroll-text"  scrollamount="10">UNIQUE TASTE, UNIQUE AROMA OF RAW HONEY AND ORGANIC PRODUCTS: HONEY, GRANOLA, CHOCOLATES AND BARS</marquee>
+    </div>
+
     <div id="filter-div">
       <div id="category-div">
       <select name = "selectCategory" id = "selectCategory" onChange={(event) => {setFilterByCategory(event.target.value); } }>
@@ -78,7 +87,7 @@ export const Products = () => {
     </div>
 
 
-    <div className="product-catalog-div">
+    <div class="product-catalog-div">
       {products.map((product) => {
         return (
           <div id="product-div" >
