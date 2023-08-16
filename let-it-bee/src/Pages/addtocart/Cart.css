@@ -91,18 +91,18 @@ i {
 .main-cart-section .cart-items {
   width: 70%;
   height: 62rem;
-  background: linear-gradient(
+  /* background: linear-gradient(
     103.49deg,
     #ffffff -28.13%,
     rgba(242, 247, 255, 0.5) 116.84%
-  );
-  box-shadow: rgba(0, 0, 0, 0.08) 0rem 0.4rem 1.2rem;
+  ); */
+  /* box-shadow: rgba(0, 0, 0, 0.08) 0rem 0.4rem 1.2rem; */
   border-radius: 2rem;
   margin: auto;
   margin: auto;
   display: grid;
   place-items: center;
-  background-color:#576e67;
+  /* background-color:#576e67; */
 }
 
 .cart-items hr {
@@ -225,7 +225,7 @@ i {
 
 .card-total {
   width: 95%;
-  margin-top: 4rem;
+  margin-top: 2rem;
   /* text-align: right; */
 
   
@@ -263,6 +263,8 @@ i {
   border-radius: 0.5rem;
   cursor: pointer;
   letter-spacing: 1px;
+  margin-bottom: 13px;
+  margin-right: 5px;
 }
 
 /* hover effects  */

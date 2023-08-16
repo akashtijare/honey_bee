@@ -18,7 +18,7 @@ const ContextCart = () => {
   // console.log(cartItems);
 
   const calculateSubtotal = (cartItems) => {
-    return cartItems.reduce((total, item) => total + item.quantity * item.price, 0);
+    return cartItems.reduce((total, item) => total + item.quantity * parseInt(item.price.slice(1)), 0); // "$234234.00"
   };
 
   const totalAmount = calculateSubtotal(cartItems);
@@ -60,7 +60,7 @@ const ContextCart = () => {
           </div>
         </div>
         <div className="card-total">
-          <h3>SUBTOTAL:<span>3500 ₹</span></h3>
+          <h3>SUBTOTAL:<span>{totalAmount} ₹</span></h3>
           <button onClick={handleCheckout}>CHECKOUT</button>
           <button className="clear-cart" onClick={handleClear}>Clear Cart</button>
 

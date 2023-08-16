@@ -40,7 +40,7 @@ const Address = () => {
 
 
     return (
-        <Box className="mainContainer" >
+        <Box className="mainContainer" marginBottom="20px">
             <Flex>
                 <Box className="addressContainer"
                     w="60%"

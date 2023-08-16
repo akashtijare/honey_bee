@@ -8,13 +8,15 @@ export const handleLogin = () => {
 	}
 }
 
-export const handleAddToCart = ({id, quantity, price}) => {
+export const handleAddToCart = ({id, quantity, price, image, name}) => {
 	return {
 		type: ADD_TO_CART,
 		payload: {
 			id: id,
 			quantity: quantity,
 			price: price,
+			image: image,
+			name: name
 		}
 	}
 }

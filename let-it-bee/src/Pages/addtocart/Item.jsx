@@ -51,7 +51,7 @@ const Item = (props) => {
                     </div>
 
                     <div className='add-minus-quantity'>
-                        <i className="fas fa-minus minus" onClick={handleDecrement}></i>
+                        <i className="fas fa-minus minus" onClick={handleDecrement} disabled={props.quantity === 0}></i>
                         <input type='text' placeholder={props.quantity} disabled />
                         <i className="fas fa-plus add" onClick={handleIncrement}></i>
 

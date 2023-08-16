@@ -4,6 +4,7 @@ import ProductDetailsStyles from './ProductDetailsStyles.css'
 import { useParams } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { handleAddToCart } from '../Redux/action';
+import { useToast } from '@chakra-ui/react';
 
 
 export const ProductDetails = () => {
@@ -15,6 +16,7 @@ export const ProductDetails = () => {
   const [prod, setProd] = useState([]);
   const [count, setCount] = useState(1);
   const dispatch = useDispatch();
+  const toast = useToast();
 
 
   useEffect(() => {
@@ -35,8 +37,17 @@ export const ProductDetails = () => {
       id: prod.id,
       quantity: count,
       price: prod.cost,
+      image: prod.image,
+      name: prod.name,
     }
     dispatch(handleAddToCart(obj));
+    toast({
+      title: 'ITEM ADDED TO CART',
+      status: 'success',
+      position: 'top',
+      duration: 1000,
+      isClosable: true,
+  });
   }
 
   return (
