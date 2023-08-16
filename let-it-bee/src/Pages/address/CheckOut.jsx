@@ -1,7 +1,17 @@
 import { Box, Flex, Spacer, Text } from "@chakra-ui/react"
+import { useSelector } from "react-redux"
 const CheckOut = () => {
 
-    let products = [
+    const products = useSelector((store) => store.cart.cartItems);
+    const calculateSubtotal = (cartItems) => {
+        return cartItems.reduce((total, item) => total + item.quantity * parseInt(item.price.slice(1)), 0); // "$234234.00"
+      };
+
+    const totall = calculateSubtotal(products);
+    const charges = totall < 500 ? 40 : 0;
+    const subTotal = totall + charges;
+
+    let trashhhh = [
         {
             "id": 1,
             "image": "https://drive.google.com/uc?export=view&id=1RLonM1c5hYI3-K3r8Zr_9OXNFNPwCQeC",
@@ -22,47 +32,9 @@ const CheckOut = () => {
             "cost": "₹2,400.00",
             "category": "pollen"
         },
-        {
-            "id": 3,
-            "image": "https://drive.google.com/uc?export=view&id=1g4szzB0e1QSTBtzqXvTj-j8dgLNqlt-s",
-            "name": "Honey Bee Wax",
-            "weight": "900 Grams",
-            "description": "Natural Beeswax is Produced by the noble worker bee, beeswax is the substance you’ll find lining the structure of the honeycomb. Bees are vital to the health of our ecosystem, as they are responsible for sustaining one-third of the food we eat. An added bonus Beeswax has amazing skin health properties!",
-            "reviews": "f",
-            "cost": "₹550.00",
-            "category": "bars"
-        },
-        {
-            "id": 3,
-            "image": "https://drive.google.com/uc?export=view&id=1g4szzB0e1QSTBtzqXvTj-j8dgLNqlt-s",
-            "name": "Honey Bee Wax",
-            "weight": "900 Grams",
-            "description": "Natural Beeswax is Produced by the noble worker bee, beeswax is the substance you’ll find lining the structure of the honeycomb. Bees are vital to the health of our ecosystem, as they are responsible for sustaining one-third of the food we eat. An added bonus Beeswax has amazing skin health properties!",
-            "reviews": "f",
-            "cost": "₹550.00",
-            "category": "bars"
-        },
-        {
-            "id": 3,
-            "image": "https://drive.google.com/uc?export=view&id=1g4szzB0e1QSTBtzqXvTj-j8dgLNqlt-s",
-            "name": "Honey Bee Wax",
-            "weight": "900 Grams",
-            "description": "Natural Beeswax is Produced by the noble worker bee, beeswax is the substance you’ll find lining the structure of the honeycomb. Bees are vital to the health of our ecosystem, as they are responsible for sustaining one-third of the food we eat. An added bonus Beeswax has amazing skin health properties!",
-            "reviews": "f",
-            "cost": "₹550.00",
-            "category": "bars"
-        },
-        {
-            "id": 3,
-            "image": "https://drive.google.com/uc?export=view&id=1g4szzB0e1QSTBtzqXvTj-j8dgLNqlt-s",
-            "name": "Honey Bee Wax",
-            "weight": "900 Grams",
-            "description": "Natural Beeswax is Produced by the noble worker bee, beeswax is the substance you’ll find lining the structure of the honeycomb. Bees are vital to the health of our ecosystem, as they are responsible for sustaining one-third of the food we eat. An added bonus Beeswax has amazing skin health properties!",
-            "reviews": "f",
-            "cost": "₹550.00",
-            "category": "bars"
-        },
+      
     ]
+    console.log(products)
     return (
         // <Box border="1px solid white" margin={1} w={"100%"} h={"100%"}>
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
@@ -77,7 +49,7 @@ const CheckOut = () => {
                     <hr />
                     <Box margin={6}>
                         {products.map((ele) =>
-                            <div>
+                            <div key={ele.id}>
                                 <div style={{ display: "flex", gap: "40px" }}>
                                     <div style={{ width: "20%", padding: "8px" }}>
                                         <img src={ele.image} alt={ele.name} style={{ width: "100%" }} />
@@ -88,12 +60,12 @@ const CheckOut = () => {
                                             <h2>{ele.name}</h2>
                                         </div>
                                         <div style={{ display: "flex" }}>
-                                            <h3>{ele.cost}</h3>
+                                            <h3>{ele.price}</h3>
                                         </div>
                                     </div>
 
                                     <div style={{ padding: "8px", marginLeft: "80px" }}>
-                                        <h3>PCS</h3>
+                                        <h3>{`PCS :${ele.quantity}`}</h3>
                                     </div>
                                 </div>
                                 <hr />
@@ -112,17 +84,17 @@ const CheckOut = () => {
                         </Box>
                         <Spacer />
                         <Box margin={4}>
-                            <Text>{`₹`}</Text>
+                            <Text>{`₹ ${totall}`}</Text>
                         </Box>
                     </Flex>
                     <hr />
                     <Flex >
                         <Box margin={4}>
-                            <Text>DILIVERY</Text>
+                            <Text>DELIVERY</Text>
                         </Box>
                         <Spacer />
                         <Box margin={4}>
-                            <Text>{`₹ 0`}</Text>
+                            <Text>{`₹ ${charges}`}</Text>
                         </Box>
                     </Flex>
                     <hr />
@@ -132,7 +104,7 @@ const CheckOut = () => {
                         </Box>
                         <Spacer />
                         <Box margin={2}>
-                            <Text fontSize='5xl'>{`₹`}</Text>
+                            <Text fontSize='5xl'>{`₹ ${subTotal}`}</Text>
                         </Box>
                     </Flex>
                 </Box>

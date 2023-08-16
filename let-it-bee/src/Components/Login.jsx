@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { handleLogin } from '../Redux/action';
+import { useToast } from '@chakra-ui/react';
 
 export const Login = () => {
 
@@ -11,6 +12,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const toast = useToast();
 
   const containerStyle = {
     backgroundColor: '#f9ae05',
@@ -62,9 +64,24 @@ export const Login = () => {
       .then((response) => {
         if (response.data.length === 1) {
           dispatch(handleLogin());
+          toast({
+            title: 'LOGIN SUCCESSFUL',
+            status: 'success',
+            position: 'top',
+            duration: 3000,
+            isClosable: true,
+        });
+
           navigate("/")
         } else {
-          console.log("wrong username or password");
+          console.log("wrong username or password")
+          toast({
+            title: 'Wrong Username or Password',
+            status: 'error',
+            position: 'top',
+            duration: 3000,
+            isClosable: true,
+        });
         }
       })
   };

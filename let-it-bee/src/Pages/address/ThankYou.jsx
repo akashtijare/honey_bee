@@ -39,7 +39,7 @@ const ThankYou = () => {
                                             <Flex>
                                             <Box spacing={10} marginLeft="10px">
                                                 <ButtonGroup gap='10'>
-                                                <Button colorScheme='teal' pl="20" pr="20" borderRadius='20px' _hover={{ bg: '#F05A1F' }} onClick={()=> navigate("./")}>BACK TO HOME</Button>
+                                                <Button colorScheme='teal' pl="20" pr="20" borderRadius='20px' _hover={{ bg: '#F05A1F' }} onClick={()=> navigate("/")}>BACK TO HOME</Button>
 
                                                 </ButtonGroup>
                                             </Box>

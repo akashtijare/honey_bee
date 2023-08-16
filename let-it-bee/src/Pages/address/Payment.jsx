@@ -61,7 +61,7 @@ const Payment = ({onPrevious}) =>{
                     isClosable: true,
                 })
 
-                navigate("./thankyou")
+                navigate("/thankyou")
                 // window.open("./thankyou",'_self')
 
             }, 3000);
