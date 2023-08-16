@@ -291,7 +291,7 @@ i {
 
 /* responsive media queries  */
 
-@media (max-width: 968px) {
+/* @media (max-width: 968px) {
   html {
     font-size: 50%;
   }
@@ -344,4 +344,4 @@ i {
   .card-total button {
     margin-bottom: 3rem;
   }
-}
+} */

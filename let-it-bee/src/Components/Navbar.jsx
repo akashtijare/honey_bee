@@ -73,38 +73,38 @@ const Navbar = () => {
                     w={'100%'}
                     padding={"20px"}
                     onClick={() => { navigate("/product"); setOpen(!open) }}
-                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    _hover={{ background: "#185E49", h: "11vh", fontSize: "30px", padding: "10px" }}
                 >
                     <Text>PRODUCTS</Text>
                 </Box>
                 <Box border={"2px solid black"}
                     w={'100%'}
                     onClick={() => { navigate('/'); setOpen(!open) }}
-                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    _hover={{ background: "#F05A1F", h: "11vh", fontSize: "30px", padding: "10px" }}
                     padding={"20px"} ><Text>ABOUT US</Text>
                 </Box>
                 <Box border={"2px solid black"}
                     w={'100%'}
                     onClick={() => { navigate('/'); setOpen(!open) }}
-                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    _hover={{ background: "#F9AE05", h: "11vh", fontSize: "30px", padding: "10px" }}
                     padding={"20px"} ><Text>OUR BLOG</Text>
                 </Box>
                 <Box border={"2px solid black"}
                     w={'100%'}
                     onClick={() => { navigate("/"); setOpen(!open) }}
-                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    _hover={{ background: "#96C1E4", h: "11vh", fontSize: "30px", padding: "10px" }}
                     padding={"20px"} ><Text>CONTACTS</Text>
                 </Box>
                 <Box border={"2px solid black"}
                     w={'100%'}
                     onClick={() => { navigate("/login"); setOpen(!open) }}
-                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    _hover={{ background: "#185E49", h: "11vh", fontSize: "30px", padding: "10px" }}
                     padding={"20px"} ><Text>MY ACCOUNT</Text>
                 </Box>
                 <Box border={"2px solid black"}
                     w={'100%'}
                     onClick={() => { navigate("/product"); setOpen(!open) }}
-                    _hover={{ background: "tomato", h: "11vh", fontSize: "30px", padding: "10px" }}
+                    _hover={{ background: "#F05A1F", h: "11vh", fontSize: "30px", padding: "10px" }}
                     padding={"20px"} ><Text>SEARCH</Text>
                 </Box>
 
