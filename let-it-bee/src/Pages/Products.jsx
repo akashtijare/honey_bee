@@ -87,10 +87,10 @@ export const Products = () => {
     </div>
 
 
-    <div class="product-catalog-div">
+    <div className="product-catalog-div">
       {products.map((product) => {
         return (
-          <div id="product-div" >
+          <div id="product-div" key={product.id}>
             <div id="img-div">
               <img id="product-img" src={product.image} alt="" />
             </div>

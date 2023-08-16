@@ -32,6 +32,36 @@ const CheckOut = () => {
             "cost": "₹550.00",
             "category": "bars"
         },
+        {
+            "id": 3,
+            "image": "https://drive.google.com/uc?export=view&id=1g4szzB0e1QSTBtzqXvTj-j8dgLNqlt-s",
+            "name": "Honey Bee Wax",
+            "weight": "900 Grams",
+            "description": "Natural Beeswax is Produced by the noble worker bee, beeswax is the substance you’ll find lining the structure of the honeycomb. Bees are vital to the health of our ecosystem, as they are responsible for sustaining one-third of the food we eat. An added bonus Beeswax has amazing skin health properties!",
+            "reviews": "f",
+            "cost": "₹550.00",
+            "category": "bars"
+        },
+        {
+            "id": 3,
+            "image": "https://drive.google.com/uc?export=view&id=1g4szzB0e1QSTBtzqXvTj-j8dgLNqlt-s",
+            "name": "Honey Bee Wax",
+            "weight": "900 Grams",
+            "description": "Natural Beeswax is Produced by the noble worker bee, beeswax is the substance you’ll find lining the structure of the honeycomb. Bees are vital to the health of our ecosystem, as they are responsible for sustaining one-third of the food we eat. An added bonus Beeswax has amazing skin health properties!",
+            "reviews": "f",
+            "cost": "₹550.00",
+            "category": "bars"
+        },
+        {
+            "id": 3,
+            "image": "https://drive.google.com/uc?export=view&id=1g4szzB0e1QSTBtzqXvTj-j8dgLNqlt-s",
+            "name": "Honey Bee Wax",
+            "weight": "900 Grams",
+            "description": "Natural Beeswax is Produced by the noble worker bee, beeswax is the substance you’ll find lining the structure of the honeycomb. Bees are vital to the health of our ecosystem, as they are responsible for sustaining one-third of the food we eat. An added bonus Beeswax has amazing skin health properties!",
+            "reviews": "f",
+            "cost": "₹550.00",
+            "category": "bars"
+        },
     ]
     return (
         // <Box border="1px solid white" margin={1} w={"100%"} h={"100%"}>
