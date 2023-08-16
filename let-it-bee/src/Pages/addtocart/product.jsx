@@ -74,7 +74,7 @@ export const product=[
         "reviews":"f",
          cost:750,
         "category":"honey",
-        quantity:1
+         quantity:1
     },
     {
         "id":8,
