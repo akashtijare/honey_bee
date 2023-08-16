@@ -2,7 +2,8 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import ProductDetailsStyles from './ProductDetailsStyles.css'
 import { useParams } from 'react-router-dom';
-
+import { useDispatch } from "react-redux";
+import { handleAddToCart } from '../Redux/action';
 
 
 export const ProductDetails = () => {
@@ -13,6 +14,8 @@ export const ProductDetails = () => {
   const [is4Active, set4IsActive] = useState(false);
   const [prod, setProd] = useState([]);
   const [count, setCount] = useState(1);
+  const dispatch = useDispatch();
+
 
   useEffect(() => {
     fetchData();
@@ -27,7 +30,14 @@ export const ProductDetails = () => {
     // console.log(data);
   }
 
-
+  const handleCart = () => {
+    const obj = {
+      id: prod.id,
+      quantity: count,
+      price: prod.cost,
+    }
+    dispatch(handleAddToCart(obj));
+  }
 
   return (
     <div id="container">
@@ -52,7 +62,7 @@ export const ProductDetails = () => {
                 <button id="add-button" onClick={() => (setCount(count + 1))} disabled={count === 10}>+</button>
               </div>
               <div id="add-to-cart-button-div">
-                <button id="add-to-cart-button">ADD TO CART</button>
+                <button id="add-to-cart-button" onClick={handleCart}>ADD TO CART</button>
               </div>
             </div>
           </div>

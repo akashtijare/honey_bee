@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-<<<<<<<<< Temporary merge branch 1
-=======
->>>>>>> 31c40cb22a341152003055faf919bcc5ad9e4995
   "products2": [
     {
       "id": 1,
@@ -264,9 +260,7 @@
       "password": "adasasdadadasd",
       "id": 5
     }
-  ]
-<<<<<<< HEAD
-=========
+  ],
     "product":[
         {
             "id":1,
@@ -512,7 +506,4 @@
         }
         
     ]
->>>>>>>>> Temporary merge branch 2
-=======
->>>>>>> 31c40cb22a341152003055faf919bcc5ad9e4995
 }
