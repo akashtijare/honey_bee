@@ -98,7 +98,7 @@ const Footer = ()=>{
                   </Heading>
                   <Text
                     mt={"30px"}
-                    color={"rgb(184,182,181)"}
+                    color={"black"}
                     fontSize={"12px"}
                   >
                     © 2023 Name Company. All rights reserved.
@@ -108,31 +108,31 @@ const Footer = ()=>{
                 <Flex w={"50%"} justifyContent={"space-evenly"}>
                   <Flex direction={"column"} gap={"10px"}>
                     <Heading fontSize={"sm"}>SHOP</Heading>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       Products
                     </Text>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       About Us
                     </Text>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       Our Blog
                     </Text>
                   </Flex>
                   <Flex direction={"column"} gap={"10px"}>
                     <Heading fontSize={"sm"}>INFO</Heading>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       Orders and shipping
                     </Text>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       FAQ
                     </Text>
                   </Flex>
                   <Flex direction={"column"} gap={"10px"}>
                     <Heading fontSize={"sm"}>CONTACTS</Heading>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       Instagram
                     </Text>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       Facebook
                     </Text>
                   </Flex>
@@ -211,31 +211,31 @@ const Footer = ()=>{
                 >
                   <Flex direction={"column"} gap={"10px"}>
                     <Heading fontSize={"md"}>SHOP</Heading>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       Products
                     </Text>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       About Us
                     </Text>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       Our Blog
                     </Text>
                   </Flex>
                   <Flex direction={"column"} gap={"10px"}>
                     <Heading fontSize={"md"}>INFO</Heading>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       Orders and shipping
                     </Text>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       FAQ
                     </Text>
                   </Flex>
                   <Flex direction={"column"} gap={"10px"}>
                     <Heading fontSize={"md"}>CONTACTS</Heading>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       Instagram
                     </Text>
-                    <Text color={"rgb(184,182,181)"} fontSize={"12px"}>
+                    <Text color={"black"} fontSize={"12px"}>
                       Facebook
                     </Text>
                   </Flex>
